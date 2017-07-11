@@ -1,8 +1,10 @@
 var express = require('express'),
 	bodyParser = require('body-parser'),
-	oauthserver = require('oauth2-server');
+	oauthserver = require('oauth2-server'),
+	cors = require('cors');
 
 var app = express();
+app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
