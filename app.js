@@ -19,7 +19,10 @@ app.oauth = oauthserver({
 app.all('/oauth/token', app.oauth.grant());
 
 app.get('/', app.oauth.authorise(), function (req, res) {
-	res.send('Congratulations, you are in a secret area!');
+	var response = {
+		username : "pedroetb"
+	}
+	res.send(response);
 });
 
 app.use(app.oauth.errorHandler());
